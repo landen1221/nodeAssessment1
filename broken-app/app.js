@@ -10,6 +10,7 @@ app.post("/", async function (req, res, next) {
     let developers = req.body.developers;
  
     for (let i=0; i<developers.length; i++) {
+      console.log(i)
       let newDev = await axios.get(`https://api.github.com/users/${developers[i]}`);
       developerInfo.push(newDev)
     }
